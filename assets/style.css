@@ -1,0 +1,88 @@
+/* THE BIRTHDAY TRIBUNE — mobile-first stylesheet */
+:root {
+  color-scheme: light;
+  --paper: #f7f0e3;
+  --ink: #211d18;
+  --muted: #71685c;
+  --line: #393229;
+  --soft-line: #c9bda9;
+  --accent: #8a3028;
+  --page-width: 760px;
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #e7dfd2; scroll-behavior: smooth; }
+body {
+  min-height: 100vh; margin: 0; padding: 16px 10px 28px;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 15% 10%, rgba(255,255,255,.45), transparent 38%), #e7dfd2;
+  font-family: Georgia, "Times New Roman", serif; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  width: 100%; max-width: var(--page-width); margin: 0 auto; padding: 25px 20px 22px;
+  overflow: hidden; background: var(--paper); border: 1px solid #d2c5b0;
+  box-shadow: 0 8px 28px rgba(43,34,23,.12);
+}
+.masthead { padding: 7px 0 15px; text-align: center; border-top: 4px double var(--line); border-bottom: 4px double var(--line); }
+.edition {
+  margin: 5px 0 8px; color: var(--muted); font-family: Arial, Helvetica, sans-serif;
+  font-size: .62rem; font-weight: 700; letter-spacing: .17em; line-height: 1.5; text-transform: uppercase;
+}
+.paper-name {
+  font-family: "Old English Text MT", "Times New Roman", serif;
+  font-size: clamp(2rem, 9vw, 4.15rem); font-weight: 900; letter-spacing: -.055em; line-height: 1.08;
+}
+.tagline { margin-top: 7px; color: var(--muted); font-size: .85rem; font-style: italic; letter-spacing: .035em; }
+.meta {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 12px; padding: 9px 0;
+  border-bottom: 1px solid var(--line); color: var(--muted); font-family: Arial, Helvetica, sans-serif;
+  font-size: .62rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+}
+article { padding-top: 22px; }
+.kicker {
+  margin: 0 0 7px; color: var(--accent); font-family: Arial, Helvetica, sans-serif;
+  font-size: .68rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+}
+h1 { margin: 0; font-size: clamp(2rem, 8vw, 3.7rem); font-weight: 700; letter-spacing: -.045em; line-height: 1.04; text-wrap: balance; }
+.deck { max-width: 58ch; margin: 12px 0 18px; color: #51483d; font-size: 1.05rem; font-style: italic; line-height: 1.5; }
+.rule { height: 0; margin: 17px 0; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--soft-line); }
+.photo-frame { margin: 0; padding: 8px; border: 1px solid var(--line); background: #fbf7ef; box-shadow: 0 2px 7px rgba(30,25,18,.08); }
+.photo-frame img { display: block; width: 100%; height: auto; max-height: 78vh; object-fit: contain; background: #fff; }
+.photo-caption { padding: 8px 3px 1px; color: var(--muted); font-size: .75rem; font-style: italic; text-align: center; }
+.story { margin: 24px 0; padding: 16px 0 17px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section-label { margin-bottom: 10px; color: var(--accent); font-family: Arial, Helvetica, sans-serif; font-size: .67rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.message { margin: 0; color: #302a23; font-size: 1.04rem; line-height: 1.85; white-space: pre-line; overflow-wrap: anywhere; }
+.recording { margin-top: 25px; padding: 17px; border: 1px solid var(--soft-line); background: rgba(255,255,255,.34); }
+.recording h2 { margin: 0 0 7px; font-size: clamp(1.35rem, 5vw, 1.9rem); line-height: 1.15; }
+.recording > p:not(.kicker) { margin: 0 0 13px; color: var(--muted); font-size: .92rem; }
+.placeholder {
+  padding: 15px; border: 1px dashed #a99b85; color: var(--muted); background: rgba(255,255,255,.38);
+  font-family: Arial, Helvetica, sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .055em;
+  line-height: 1.65; text-align: center;
+}
+audio, video { display: block; width: 100%; max-width: 100%; margin-top: 12px; }
+video { max-height: 65vh; background: #171411; border: 1px solid var(--line); }
+.footer {
+  margin-top: 25px; padding-top: 13px; border-top: 4px double var(--line); color: var(--muted);
+  font-family: Arial, Helvetica, sans-serif; font-size: .68rem; letter-spacing: .045em;
+  line-height: 1.8; text-align: center;
+}
+.heart { color: var(--accent); font-size: 1rem; }
+@media (max-width: 380px) {
+  body { padding: 0; background: var(--paper); }
+  .page { padding: 19px 15px; border: 0; box-shadow: none; }
+  .meta { font-size: .56rem; }
+  .message { font-size: 1rem; }
+}
+@media (min-width: 700px) {
+  body { padding: 34px 20px 48px; }
+  .page { padding: 38px 52px 34px; }
+  .masthead { padding-bottom: 19px; }
+  .meta { font-size: .68rem; }
+  article { padding-top: 30px; }
+  .photo-frame { padding: 11px; }
+  .story { margin: 30px 0; padding: 21px 0; }
+  .message { font-size: 1.1rem; }
+  .recording { padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
